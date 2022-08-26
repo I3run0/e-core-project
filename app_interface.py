@@ -26,26 +26,39 @@ class App_interface():
     def show_people_by_age(self) -> None:
         people: str = self.__app_controller.get_people_ordered_by_age()
 
-        print("Registered people list sorted by age")
-        for person in people:
-            print(f'Name: {person.get_name()} ; Age: {person.get_age()} ; Age Group: {person.get_age_group()}')
-
+        if len(people) > 0:
+            print("Registered people list sorted by age")
+            for person in people:
+                print(f'Name: {person.get_name()} ; Age: {person.get_age()} ; Age Group: {person.get_age_group()}')
+        else:
+            print("Add person to the list")
+            
         print()
 
     def show_people_by_name(self) -> None:
         people: str = self.__app_controller.get_people_ordered_by_nome()
 
-        print("Registered people list sorted by name")
-        for person in people:
-            print(f'Name: {person.get_name()} ; Age: {person.get_age()} ; Age Group: {person.get_age_group()}')
-
+        if len(people) > 0:
+            print("Registered people list sorted by name")
+            for person in people:
+                print(f'Name: {person.get_name()} ; Age: {person.get_age()} ; Age Group: {person.get_age_group()}')
+        else:
+            print("Add person to the list")
+            
         print()
 
     def show_help(self) -> None:
         print("Type add_person to add a new person\n" +\
             "Type show_people_by_age to show the list fo people sorted by age\n" +\
-            "Type show_people_by_nem to show the list of people sorted by name\n" +\
+            "Type show_people_by_name to show the list of people sorted by name\n" +\
+            "Type clear_list to cleat the list of people\n" +\
             "Type exit to exit the programz\n")
+
+    def clear_list(self) -> None:
+        self.__app_controller.clear_list()
+
+        print("Registered people list was cleaned")
+        print()
 
     def exit(self) -> None:
         print('Thank you for been here.')

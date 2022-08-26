@@ -21,6 +21,9 @@ class App_CMD(cmd.Cmd):
     def do_show_people_by_name(self, arg: str) -> None:
         self.__app_interface.show_people_by_name()
     
+    def do_clear_list(self, arg: str) -> None:
+        self.__app_interface.clear_list()
+        
     def do_exit(self, arg: str) -> None:
         self.__app_interface.exit()
         sys.exit(1)

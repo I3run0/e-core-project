@@ -23,6 +23,10 @@ class App_controller():
                 id_to_insert += 1
 
             self.__people_ordered_name.insert(id_to_insert, person)
+    
+    def clear_list(self) -> None:
+        self.__people_ordered_age.clear()
+        self.__people_ordered_name.clear()
 
     def get_people_ordered_by_age(self) -> list:
         return self.__people_ordered_age
